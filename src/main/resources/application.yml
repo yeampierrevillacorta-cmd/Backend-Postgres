@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mysyncapp-backend
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.example.demo: DEBUG
+

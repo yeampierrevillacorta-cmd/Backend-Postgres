@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    # Fíjate en la estructura: jdbc:postgresql:/// (3 barras)
+    # y los parámetros socketFactory y cloudSqlInstance
+    url: jdbc:postgresql:///${DB_NAME}?socketFactory=com.google.cloud.sql.postgres.SocketFactory&cloudSqlInstance=${CLOUD_SQL_CONNECTION_NAME}
+    username: ${DB_USERNAME:mysyncapp_user}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    # Cambia 'validate' a 'update' para que cree las tablas automáticamente la primera vez
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000

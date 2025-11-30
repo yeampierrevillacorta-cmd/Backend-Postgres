@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mysyncapp_db
+    username: mysyncapp_user
+    password: 12345Yeam
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+jwt:
+  secret: dev-secret-key-change-in-production-minimum-256-bits
+  expiration: 86400000 # 24 horas en milisegundos
+
